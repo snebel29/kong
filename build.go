@@ -164,8 +164,8 @@ func buildChild(k *Kong, node *Node, typ NodeType, v reflect.Value, ft reflect.S
 
 		child.Name = value.Name
 		if child.Name != name {
-			fail("first field in positional branch %s.%s must have the same name as the parent field (%s).",
-				v.Type().Name(), ft.Name, child.Name)
+			fail("first field in positional branch %s.%s must have the same name as the parent field (%s != %s).",
+				v.Type().Name(), ft.Name, child.Name, name)
 		}
 
 		child.Argument = value
